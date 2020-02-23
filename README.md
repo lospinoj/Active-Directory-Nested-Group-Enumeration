@@ -41,27 +41,27 @@ down in the the member objects a user is identified as samAccountType=805306368 
 samAccountTypes found are written to "debug0". There's no telling what you might find there, machine accounts or distribution groups.
 
 SAM_DOMAIN_OBJECT                   0x0             0
-SAM_GROUP_OBJECT                    0x10000000			268435456
+SAM_GROUP_OBJECT                    0x10000000		268435456
 SAM_NON_SECURITY_GROUP_OBJECT       0x10000001	    268435457
-SAM_ALIAS_OBJECT                    0x20000000			536870912
+SAM_ALIAS_OBJECT                    0x20000000		536870912
 SAM_NON_SECURITY_ALIAS_OBJECT       0x20000001	    536870913
-SAM_USER_OBJECT                     0x30000000		  805306368
+SAM_USER_OBJECT                     0x30000000		805306368
 SAM_NORMAL_USER_ACCOUNT             0x30000000	    805306368
-SAM_MACHINE_ACCOUNT                 0x30000001			805306369
-SAM_TRUST_ACCOUNT                   0x30000002		  805306370
-SAM_APP_BASIC_GROUP                 0x40000000			1073741824
-SAM_APP_QUERY_GROUP                 0x40000001			1073741825
-SAM_ACCOUNT_TYPE_MAX                0x7fffffff			2147483647
+SAM_MACHINE_ACCOUNT                 0x30000001		805306369
+SAM_TRUST_ACCOUNT                   0x30000002		805306370
+SAM_APP_BASIC_GROUP                 0x40000000		1073741824
+SAM_APP_QUERY_GROUP                 0x40000001		1073741825
+SAM_ACCOUNT_TYPE_MAX                0x7fffffff		2147483647
 
 
-Group Scope	    Group Type	  groupType attribute	  sAMAccountType attribute
-Universal	      Distribution	8			                268435457
-Universal	      Security	    -2147483640*		      268435456
-Global		      Distribution	2			                268435457
-Global		      Security	    -2147483646*		      268435456
-Domain Local	  Distribution	4			                536870913
-Domain Local	  Security	    -2147483644*		      536870912
-BuiltIn         Security      -2147483643*          536870912
+Group Scope         Group Type      groupType attribute     sAMAccountType attribute
+Universal           Distribution    8                       268435457
+Universal           Security        -2147483640*            268435456
+Global              Distribution    2                       268435457
+Global              Security        -2147483646*            268435456
+Domain Local        Distribution    4                       536870913
+Domain Local        Security        -2147483644*            536870912
+BuiltIn             Security        -2147483643*            536870912
 
 LDAP Escaping Special Characters:
 https://social.technet.microsoft.com/wiki/contents/articles/5312.active-directory-characters-to-escape.aspx
