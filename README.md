@@ -70,5 +70,31 @@ samAccountTypes found are written to "debug0". There's no telling what you might
 | Domain Local | Security | -2147483644* | 536870912 |
 | BuiltIn | Security | -2147483643* | 536870912 |
 
+## Know Issue: ##
+There have been times when it's dies with the error shown below, but it has not done so since adding "raise_exceptions=False" to the connection statement:
+
+Traceback (most recent call last):
+  File "C:\Python36\lib\site-packages\ldap3\strategy\base.py", line 823, in sending
+    self.connection.socket.sendall(encoded_message)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\scripts.py\active_directory\group_enum\ldap_group_deep_enum_10.py", line 230, in <module>
+    main()
+  File "C:\scripts.py\active_directory\group_enum\ldap_group_deep_enum_10.py", line 144, in main
+    groupMembersDump(groupRootx,groupPathList,group,path)
+  File "C:\scripts.py\active_directory\group_enum\ldap_group_deep_enum_10.py", line 194, in groupMembersDump
+    connMember.search(search_base=memberDomainDN,search_scope=SUBTREE,search_filter=f'(distinguishedName={memberx})',attributes=['samAccountName','objectCategory','objectClass','samAccountType'])
+  File "C:\Python36\lib\site-packages\ldap3\core\connection.py", line 788, in search
+    response = self.post_send_search(self.send('searchRequest', request, controls))
+  File "C:\Python36\lib\site-packages\ldap3\strategy\base.py", line 299, in send
+    self.sending(ldap_message)
+  File "C:\Python36\lib\site-packages\ldap3\strategy\base.py", line 834, in sending
+    raise communication_exception_factory(LDAPSocketSendError, type(e)(str(e)))(self.connection.last_error)
+ldap3.core.exceptions.LDAPSocketSendError: socket sending error[WinError 10054] An existing connection was forcibly closed by the remote host
+
+
 ## LDAP Escaping Special Characters: ##
 https://social.technet.microsoft.com/wiki/contents/articles/5312.active-directory-characters-to-escape.aspx
